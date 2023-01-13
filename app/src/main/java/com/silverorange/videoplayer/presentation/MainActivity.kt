@@ -6,7 +6,9 @@ import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import com.silverorange.videoplayer.R
 import com.silverorange.videoplayer.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
