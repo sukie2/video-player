@@ -23,7 +23,7 @@ class PlayerFragment : Fragment(R.layout.fragment_player), Player.Listener {
     private lateinit var binding: FragmentPlayerBinding
     private val viewModel by viewModels<PlayerViewModel>()
     private val showError = MutableStateFlow(false)
-    private val currentMediaIndex = MutableStateFlow(0)
+    private val currentMediaIndex = MutableStateFlow(-1)
     private lateinit var markwon: Markwon
     private lateinit var player: Player
 
@@ -66,6 +66,7 @@ class PlayerFragment : Fragment(R.layout.fragment_player), Player.Listener {
                         shouldPrepare = true
                     }
                     if (shouldPrepare) {
+                        currentMediaIndex.value = 0
                         player.prepare()
                         player.play()
                     }
